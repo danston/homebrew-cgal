@@ -1,2 +1,3 @@
 # homebrew-cgal
-Homebrew CGAL formulas
+
+Homebrew CGAL formulas.
