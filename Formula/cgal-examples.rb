@@ -33,6 +33,7 @@ class CgalExamples < Formula
     system "cmake", ".", *args
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     FileUtils.cp_r "examples/.", "#{prefix}/"
+    (Dir.entries("#{prefix}/") - [".", ".."]).each{|name| FileUtils.rm "#{prefix}/#{name}/Makefile"}
 
   end
 
