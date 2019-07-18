@@ -31,7 +31,7 @@ class CgalExamples < Formula
     ]
 
     
-  Dir["examples/**"].each do |file_name|
+  Dir["examples/*"].each do |file_name|
     FileUtils.mkdir "#{prefix}/#{file_name}"
   end
 
