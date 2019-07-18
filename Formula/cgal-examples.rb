@@ -38,9 +38,11 @@ class CgalExamples < Formula
       if File.directory?("examples/#{dirname}/") then
         (Dir.entries("examples/#{dirname}/") - [".", ".."]).each{|filename| 
 
-          puts "examples/#{dirname}/#{filename}"
-          if File.extname("examples/#{dirname}/#{filename}") == ""
-            FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}"
+          if File.file?("examples/#{dirname}/#{filename}") then
+            if File.extname("examples/#{dirname}/#{filename}") == ""
+              puts "examples/#{dirname}/#{filename}"
+              # FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+            end
           end
         }
       end
