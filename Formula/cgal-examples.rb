@@ -32,7 +32,7 @@ class CgalExamples < Formula
 
     # FileUtils.cp_r "examples/.", "#{prefix}/"
     (Dir.entries("examples/") - [".", ".."]).each{|name| puts "#{prefix}/#{name}/"}
-    Dir.children("examples/").each{|name| FileUtils.cp_r Dir.glob("examples/#{name}/*.txt"), "#{prefix}/#{name}/"}
+    (Dir.entries("examples/") - [".", ".."]).each{|name| FileUtils.cp_r Dir.glob("examples/#{name}/*.cpp"), "#{prefix}/#{name}/"}
 
   end
 
