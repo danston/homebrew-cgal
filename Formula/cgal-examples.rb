@@ -31,7 +31,7 @@ class CgalExamples < Formula
     ]
 
     
-    FileUtils.cp "examples/AABB_tree/CMakeLists.txt" "#{prefix}/AABB_tree/CMakeLists.txt"
+    FileUtils.cp "examples/AABB_tree/CMakeLists.txt", "#{prefix}/AABB_tree/CMakeLists.txt"
   end
 
   test do
