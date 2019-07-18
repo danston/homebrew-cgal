@@ -30,8 +30,8 @@ class CgalExamples < Formula
       -DOpenCV_DIR="/usr/local/opt/opencv@2/share/OpenCV"
     ]
 
-    system "cmake", ".", *args
-    prefix.cp "examples/AABB_tree/CMakeLists.txt"
+    
+    FileUtils.cp "examples/AABB_tree/CMakeLists.txt" "#{prefix}/AABB_tree/CMakeLists.txt"
   end
 
   test do
