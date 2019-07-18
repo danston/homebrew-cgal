@@ -30,10 +30,15 @@ class CgalExamples < Formula
       -DOpenCV_DIR="/usr/local/opt/opencv@2/share/OpenCV"
     ]
 
+    FileUtils.cp_r "examples/.", "#{prefix}/"
     system "cmake", ".", *args
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
-    FileUtils.cp_r "examples/.", "#{prefix}/"
-    (Dir.entries("#{prefix}/") - [".", ".."]).each{|name| FileUtils.rm "#{prefix}/#{name}/Makefile"}
+    (Dir.entries("examples/") - [".", ".."]).each{|dirname| 
+      (Dir.entries("examples/#{dirname}/") - [".", ".."]).each{|filename| 
+        if File.extname("#{filename}") == ""
+          FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}"
+        end
+      }}
 
   end
 
