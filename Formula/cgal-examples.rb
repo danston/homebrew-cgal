@@ -33,7 +33,7 @@ class CgalExamples < Formula
     system "cmake", ".", *args
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
 
-    include.install Dir["examples/AABB_tree/*"]
+    include.install Dir["examples/AABB_tree/*.cpp"]
   end
 
   test do
