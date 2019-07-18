@@ -31,10 +31,8 @@ class CgalExamples < Formula
     ]
 
     
-  Dir["examples/*"].each do |file_name|
-    FileUtils.mkdir "#{prefix}/#{file_name}"
-  end
-
+    FileUtils.cp_r "examples/**/CMakeLists.txt", "#{prefix}"
+    FileUtils.cp_r "examples/**/*.cpp", "#{prefix}"
 
   end
 
