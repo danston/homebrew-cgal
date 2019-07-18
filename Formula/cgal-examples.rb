@@ -41,7 +41,7 @@ class CgalExamples < Formula
           if File.file?("examples/#{dirname}/#{filename}") then
             if File.extname("examples/#{dirname}/#{filename}") == ""
               puts "examples/#{dirname}/#{filename}"
-              # FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+              FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
           end
         }
