@@ -10,7 +10,6 @@ class CgalExamples < Formula
   depends_on "eigen"
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "cgal"
   depends_on "qt"
   depends_on "tbb"
   depends_on "suite-sparse"
@@ -32,7 +31,7 @@ class CgalExamples < Formula
     ]
 
     system "cmake", ".", *args
-    system "ctest", "examples/AABB_tree/", "-E" "execution___of__"
+    system "ctest", "examples/AABB_tree/", "-E", "execution___of__"
 
     include.install Dir["examples/AABB_tree/*"]
   end
