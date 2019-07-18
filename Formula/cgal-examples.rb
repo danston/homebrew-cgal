@@ -30,9 +30,9 @@ class CgalExamples < Formula
       -DOpenCV_DIR="/usr/local/opt/opencv@2/share/OpenCV"
     ]
 
-    FileUtils.cp_r "examples/.", "#{prefix}/"
-    Dir.entries("examples/").each{|name| puts "#{prefix}/#{name}/"}
-    Dir.entries("examples/").each{|name| FileUtils.cp_r Dir.glob("examples/#{name}/*.txt"), "#{prefix}/#{name}/"}
+    # FileUtils.cp_r "examples/.", "#{prefix}/"
+    Dir.children("examples/").each{|name| puts "#{prefix}/#{name}/"}
+    Dir.children("examples/").each{|name| FileUtils.cp_r Dir.glob("examples/#{name}/*.txt"), "#{prefix}/#{name}/"}
 
   end
 
