@@ -35,9 +35,10 @@ class CgalExamples < Formula
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     (Dir.entries("examples/") - [".", ".."]).each{|dirname| 
       (Dir.entries("examples/#{dirname}/") - [".", ".."]).each{|filename| 
-        if File.extname("#{filename}") == ""
-          FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}"
-        end
+        puts File.extname("#{filename}")
+        # if File.extname("#{filename}") == ""
+        #   FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}"
+        # end
       }}
 
   end
