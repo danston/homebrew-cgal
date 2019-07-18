@@ -34,12 +34,15 @@ class CgalExamples < Formula
     system "cmake", ".", *args
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     (Dir.entries("examples/") - [".", ".."]).each{|dirname| 
-      (Dir.entries("examples/#{dirname}/") - [".", ".."]).each{|filename| 
-        puts File.extname("#{filename}")
-        # if File.extname("#{filename}") == ""
-        #   FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}"
-        # end
-      }}
+      
+      if File.directory?("examples/#{dirname}/")
+        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each{|filename| 
+          if File.extname("#{filename}") == ""
+            FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}"
+          end
+        }
+      end
+    }
 
   end
 
