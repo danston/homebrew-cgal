@@ -31,8 +31,8 @@ class CgalExamples < Formula
     ]
 
     # FileUtils.cp_r "examples/.", "#{prefix}/"
-    Dir.children("examples/").each{|name| puts "#{prefix}/#{name}/"}
-    Dir.children("examples/").each{|name| FileUtils.cp_r Dir.glob("examples/#{name}/*.txt"), "#{prefix}/#{name}/"}
+    Dir.entries("examples/", ignore: :almost_all).each{|name| puts "#{prefix}/#{name}/"}
+    Dir.entries("examples/").each{|name| FileUtils.cp_r Dir.glob("examples/#{name}/*.txt"), "#{prefix}/#{name}/"}
 
   end
 
