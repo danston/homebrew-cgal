@@ -30,8 +30,12 @@ class CgalExamples < Formula
       -DOpenCV_DIR="/usr/local/opt/opencv@2/share/OpenCV"
     ]
 
-    FileUtils.mkdir "#{prefix}/AABB_tree"
-    FileUtils.cp "examples/AABB_tree/CMakeLists.txt", "#{prefix}/AABB_tree/CMakeLists.txt"
+    
+  Dir["examples/**"].each do |file_name|
+    FileUtils.mkdir "#{prefix}/#{file_name}"
+  end
+
+
   end
 
   test do
