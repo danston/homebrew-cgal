@@ -32,6 +32,9 @@ class CgalExamples < Formula
 
     
     FileUtils.cp_r "examples/.", "#{prefix}/"
+    system "cmake", ".", *args
+    system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
+    FileUtils.cp "examples/AABB_tree/!(*.cmake|Makefile|*.cpp|*.txt)"
 
   end
 
