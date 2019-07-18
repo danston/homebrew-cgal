@@ -6,9 +6,9 @@ class Lastools < Formula
   version "1.0"
 
   def install
-    include.install Dir["include/LASlib/inc/*"]
-    lib.install "include/LASlib/lib/liblas.a"
-    include.install Dir["include/LASzip/src/*"]
+    include.install Dir["LASlib/inc/*"]
+    lib.install "LASlib/lib/liblas.a"
+    include.install Dir["LASzip/src/*"]
   end
 
   test do
