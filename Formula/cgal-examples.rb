@@ -6,7 +6,6 @@ class CgalExamples < Formula
   version "4.14"
 
   depends_on "cmake" => [:build, :test]
-  deoends_on "ruby"
   depends_on "boost"
   depends_on "eigen"
   depends_on "gmp"
