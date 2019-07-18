@@ -31,8 +31,7 @@ class CgalExamples < Formula
     ]
 
     
-    FileUtils.cp_r "examples/**/CMakeLists.txt", "#{prefix}"
-    FileUtils.cp_r "examples/**/*.cpp", "#{prefix}"
+    FileUtils.cp_r Dir.glob("/examples/*"), "#{prefix}/"
 
   end
 
