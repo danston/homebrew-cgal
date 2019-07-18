@@ -31,6 +31,8 @@ class CgalExamples < Formula
     ]
 
     FileUtils.cp_r "examples/.", "#{prefix}/"
+    system "cmake", ".", *args
+    system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     (Dir.entries("examples/") - [".", ".."]).each{|name| FileUtils.cp Dir.glob("examples/#{name}/*.exec"), "#{prefix}/#{name}/"}
 
   end
