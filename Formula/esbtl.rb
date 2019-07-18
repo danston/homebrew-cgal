@@ -1,4 +1,4 @@
-class Cgal < Formula
+class Esbtl < Formula
   desc "Easy Structural Biology Template Library"
   homepage "http://esbtl.sourceforge.net"
   url "https://github.com/danston/cgal-brew/raw/master/esbtl.tar.gz"
