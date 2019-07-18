@@ -31,7 +31,7 @@ class CgalExamples < Formula
     ]
 
     
-    FileUtils.cp_r Dir.glob("/examples/*"), "#{prefix}/"
+    FileUtils.cp_r Dir.glob("/examples/**"), "#{prefix}/"
 
   end
 
