@@ -32,7 +32,7 @@ class CgalExamples < Formula
 
     system "cmake", ".", *args
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
-    FileUtils.cp_r "examples/!(*.cmake|Makefile|*.cpp|*.txt|.dir|.marks)", "#{prefix}/"
+    FileUtils.cp_r "examples/{[!(*.cmake|Makefile|*.cpp|*.txt|.dir|.marks)]}.", "#{prefix}/"
 
   end
 
