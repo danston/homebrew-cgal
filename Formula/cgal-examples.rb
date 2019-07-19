@@ -41,7 +41,7 @@ class CgalExamples < Formula
           if File.file?("examples/#{dirname}/#{filename}") then
             extension = File.extname("examples/#{dirname}/#{filename}")
 
-            if extension == "" && filename != "Makefile"
+            if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
               puts "examples/#{dirname}/#{filename}"
               FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
@@ -49,7 +49,6 @@ class CgalExamples < Formula
         }
       end
     }
-
   end
 
   test do
