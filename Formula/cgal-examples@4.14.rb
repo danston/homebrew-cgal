@@ -28,6 +28,7 @@ class CgalExamplesAT414 < Formula
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
       -DCMAKE_MACOSX_RPATH=ON
       -DCMAKE_INSTALL_RPATH="/usr/local/opt/cgal@4.14/lib"
+      -DCGAL_DIR="/Users/monet/Documents/brew/cgal-release"
       -DCMAKE_BUILD_TYPE=Release
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
