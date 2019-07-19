@@ -39,7 +39,7 @@ class CgalExamplesAT414 < Formula
     ]
 
     FileUtils.cp_r "examples/.", "#{prefix}/"
-    system "cmake", ".", *args
+    system "cmake", ".", "-v", *args
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     
     puts "Installing examples for CGAL 4.14..."
