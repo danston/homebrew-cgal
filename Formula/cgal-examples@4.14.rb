@@ -25,17 +25,18 @@ class CgalExamplesAT414 < Formula
 
   def install
     args = std_cmake_args + %W[
-      -DCGAL_DIR="/Users/monet/Documents/brew/cgal-release"
-      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
+      -DCMAKE_INSTALL_NAME_DIR=#{prefix}/lib
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
       -DBUILD_TESTING=ON
-      -DQt5_DIR="/usr/local/opt/qt/lib/cmake/Qt5"
-      -DOpenCV_DIR="/usr/local/opt/opencv@2/share/OpenCV"
+      -DQt5_DIR=/usr/local/opt/qt/lib/cmake/Qt5
+      -DOpenCV_DIR=/usr/local/opt/opencv@2/share/OpenCV
     ]
 
     FileUtils.cp_r "examples/.", "#{prefix}/"
     system "cmake", ".", *args
+    system "make", "install"
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     
     puts "Installing examples for CGAL 4.14..."
