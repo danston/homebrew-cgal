@@ -25,9 +25,9 @@ class CgalExamplesAT414 < Formula
 
   def install
     args = std_cmake_args + %W[
-      -DCMAKE_CXX_FLAGS="-I/usr/local/opt/cgal@4.14/include"
-      -DCMAKE_SHARED_LINKER_FLAGS="-L/usr/local/opt/cgal@4.14/lib"
-      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_CXX_FLAGS=-I/usr/local/opt/cgal@4.14/include
+      -DCMAKE_SHARED_LINKER_FLAGS=-L/usr/local/opt/cgal@4.14/lib
+      -DCMAKE_BUILD_TYPE="Release"
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
       -DBUILD_TESTING=ON
