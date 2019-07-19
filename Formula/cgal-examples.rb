@@ -22,6 +22,7 @@ class CgalExamples < Formula
 
   def install
     args = std_cmake_args + %W[
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
       -DCMAKE_BUILD_TYPE="Release"
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
