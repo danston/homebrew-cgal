@@ -30,6 +30,8 @@ class CgalExamplesAT414 < Formula
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
       -DBUILD_TESTING=ON
+      -DCMAKE_MACOSX_RPATH=1
+      -DCMAKE_INSTALL_RPATH="/usr/local/opt/cgal@4.14/lib"
       -DCMAKE_BUILD_RPATH="/usr/local/opt/cgal@4.14/lib"
       -DCMAKE_PREFIX_PATH="#{prefix}"
       -DQt5_DIR="/usr/local/opt/qt/lib/cmake/Qt5"
