@@ -21,7 +21,6 @@ class CgalExamplesAT414 < Formula
   depends_on "opencv@2"
   depends_on "danston/cgal/esbtl"
   depends_on "danston/cgal/lastools"
-  depends_on "danston/cgal/cgal@4.14"
 
   def install
     args = std_cmake_args + %W[
