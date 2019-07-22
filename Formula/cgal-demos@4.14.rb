@@ -39,17 +39,17 @@ class CgalDemosAT414 < Formula
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     
     puts "\nInstalling demos for CGAL 4.14..."
-    (Dir.entries("demos/") - [".", ".."]).each{|dirname| 
+    (Dir.entries("demo/") - [".", ".."]).each{|dirname| 
       
-      if File.directory?("demos/#{dirname}/") then
-        (Dir.entries("demos/#{dirname}/") - [".", ".."]).each{|filename| 
+      if File.directory?("demo/#{dirname}/") then
+        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each{|filename| 
 
-          if File.file?("demos/#{dirname}/#{filename}") then
-            extension = File.extname("demos/#{dirname}/#{filename}")
+          if File.file?("demo/#{dirname}/#{filename}") then
+            extension = File.extname("demo/#{dirname}/#{filename}")
 
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
-              puts "demos/#{dirname}/#{filename}"
-              FileUtils.cp "demos/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+              puts "demo/#{dirname}/#{filename}"
+              FileUtils.cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
           end
         }
