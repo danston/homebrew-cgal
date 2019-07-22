@@ -1,4 +1,4 @@
-class CgalExamplesAT414 < Formula
+class CgalDemosAT414 < Formula
   desc "Computational Geometry Algorithms Library: Demos Version 4.14"
   homepage "https://www.cgal.org/"
   url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14/CGAL-4.14.tar.xz"
