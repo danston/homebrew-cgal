@@ -38,7 +38,7 @@ class CgalExamplesAT414 < Formula
     system "make", "install"
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
     
-    puts "Installing examples for CGAL 4.14..."
+    puts "\nInstalling examples for CGAL 4.14..."
     (Dir.entries("examples/") - [".", ".."]).each{|dirname| 
       
       if File.directory?("examples/#{dirname}/") then
