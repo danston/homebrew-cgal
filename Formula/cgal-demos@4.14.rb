@@ -47,9 +47,14 @@ class CgalDemosAT414 < Formula
           if File.file?("demo/#{dirname}/#{filename}") then
             extension = File.extname("demo/#{dirname}/#{filename}")
 
-            if (extension == "" || extension == ".dylib") && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
+            if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
               puts "demo/#{dirname}/#{filename}"
               FileUtils.cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+            end
+
+            if extension == ".dylib"
+              puts "demo/#{dirname}/#{filename}"
+              FileUtils.cp "demo/#{dirname}/#{filename}", "#{prefix}/lib/"
             end
           end
         }
