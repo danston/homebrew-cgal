@@ -33,7 +33,7 @@ class CgalDemosAT414 < Formula
       -DOpenCV_DIR=/usr/local/opt/opencv@2/share/OpenCV
     ]
 
-    FileUtils.cp_r "demos/.", "#{prefix}/"
+    FileUtils.cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
     system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
