@@ -58,6 +58,7 @@ class CgalExamplesAT414 < Formula
   end
 
   test do
-    system "ctest", "-L", "AABB_tree", "-E", "compilation___of__"
+    # https://doc.cgal.org/latest/AABB_tree/AABB_tree_2AABB_insertion_example_8cpp-example.html
+    system "#{prefix}/AABB_tree/AABB_insertion_example"
   end
 end
