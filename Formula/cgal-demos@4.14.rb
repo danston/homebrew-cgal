@@ -36,7 +36,7 @@ class CgalDemosAT414 < Formula
     FileUtils.cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
-    system "ctest", "-L", "AABB_tree", "-E", "execution___of__"
+    system "ctest", "-E", "execution___of__"
     
     puts "\nInstalling demos for CGAL 4.14..."
     (Dir.entries("demo/") - [".", ".."]).each{|dirname| 
