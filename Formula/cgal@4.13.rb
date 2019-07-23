@@ -7,7 +7,8 @@ class CgalAT413 < Formula
   bottle do
     root_url "https://dl.bintray.com/danston/bottles"
     cellar :any
-    sha256 "feee59320832284caa46dc9b2e24f9248b05bcb5ccdbf85d40890dcba279fd72" => :mojave
+    rebuild 3
+    sha256 "e68c8b0c32f3d366e43f126988ad518d5e2ecb7a26f2d89107ddd395c11b0e16" => :mojave
   end
 
   keg_only :versioned_formula
