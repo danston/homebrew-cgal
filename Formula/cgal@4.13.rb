@@ -4,13 +4,6 @@ class CgalAT413 < Formula
   url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.13/CGAL-4.13.tar.xz"
   sha256 "3e3dd7a64febda58be54c3cbeba329ab6a73b72d4d7647ba4931ecd1fad0e3bc"
 
-  bottle do
-    root_url "https://dl.bintray.com/danston/bottles"
-    cellar :any
-    rebuild 3
-    sha256 "e68c8b0c32f3d366e43f126988ad518d5e2ecb7a26f2d89107ddd395c11b0e16" => :mojave
-  end
-
   keg_only :versioned_formula
 
   depends_on "cmake" => [:build, :test]
