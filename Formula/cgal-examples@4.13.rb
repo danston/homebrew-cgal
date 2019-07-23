@@ -3,7 +3,6 @@ class CgalExamplesAT413 < Formula
   homepage "https://www.cgal.org/"
   url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.13/CGAL-4.13.tar.xz"
   sha256 "3e3dd7a64febda58be54c3cbeba329ab6a73b72d4d7647ba4931ecd1fad0e3bc"
-  version "4.13"
 
   keg_only :versioned_formula
 
@@ -27,7 +26,7 @@ class CgalExamplesAT413 < Formula
   def install
     args = std_cmake_args + %W[
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-      -DCMAKE_INSTALL_NAME_DIR=#{prefix}/lib
+      -DCMAKE_INSTALL_NAME_DIR=#{lib}
       -DCMAKE_BUILD_TYPE=Release
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
