@@ -15,7 +15,7 @@ class CgalAT413 < Formula
   def install
     args = std_cmake_args + %W[
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-      -DCMAKE_INSTALL_NAME_DIR=#{prefix}/lib
+      -DCMAKE_INSTALL_NAME_DIR=#{lib}
       -DCMAKE_BUILD_TYPE=Release
       -DWITH_Eigen3=ON
       -DWITH_LAPACK=ON
@@ -53,7 +53,7 @@ class CgalAT413 < Formula
       add_executable(surprise surprise.cpp)
       target_link_libraries(surprise PRIVATE CGAL::CGAL)
     EOS
-    system "cmake", "-L", "-DCMAKE_BUILD_RPATH=#{prefix}/lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
+    system "cmake", "-L", "-DCMAKE_BUILD_RPATH=#{lib}", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
     system "cmake", "--build", ".", "-v"
     assert_equal "15\n15", shell_output("./surprise").chomp
   end
