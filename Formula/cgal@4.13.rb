@@ -6,6 +6,12 @@ class CgalAT413 < Formula
 
   keg_only :versioned_formula
 
+  bottle do
+    root_url "https://dl.bintray.com/danston/bottles-cgal"
+    cellar :any
+    sha256 "d3d2f1b6cfd686c169d9cdc0ffbe21cb22db8592d04c4abd2851da0c2b00c4ad" => :mojave
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
   depends_on "eigen"
