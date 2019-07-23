@@ -5,7 +5,7 @@ class CgalAT413 < Formula
   sha256 "3e3dd7a64febda58be54c3cbeba329ab6a73b72d4d7647ba4931ecd1fad0e3bc"
 
   bottle do
-    root_url "https://dl.bintray.com/danston/bottles/cgal/4.13"
+    root_url "https://dl.bintray.com/danston/bottles"
     cellar :any
     rebuild 1
     sha256 "a608b3ae8c28753d3eb9eb935ea1f32588b7d0018dd7bac2b99d05b4fcd9041a" => :mojave
