@@ -53,7 +53,7 @@ class CgalAT413 < Formula
       add_executable(surprise surprise.cpp)
       target_link_libraries(surprise PRIVATE CGAL::CGAL)
     EOS
-    system "cmake", "-L", "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
+    system "cmake", "-L", "-DCMAKE_BUILD_RPATH=#{prefix}/lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
     system "cmake", "--build", ".", "-v"
     assert_equal "15\n15", shell_output("./surprise").chomp
   end
