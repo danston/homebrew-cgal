@@ -8,8 +8,8 @@ class CgalDemosAT413 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
-  depends_on "danston/cgal/lastools"
   depends_on "cimg"
+  depends_on "danston/cgal/lastools"
   depends_on "eigen"
   depends_on "gmp"
   depends_on "metis"
