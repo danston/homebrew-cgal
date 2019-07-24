@@ -1,5 +1,5 @@
 class CgalAT413 < Formula
-  desc "Computational Geometry Algorithms Library: Version 4.13"
+  desc "Computational Geometry Algorithms Library: v.4.13"
   homepage "https://www.cgal.org/"
   url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.13/CGAL-4.13.tar.xz"
   sha256 "3e3dd7a64febda58be54c3cbeba329ab6a73b72d4d7647ba4931ecd1fad0e3bc"

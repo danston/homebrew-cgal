@@ -1,5 +1,5 @@
 class CgalExamplesAT414 < Formula
-  desc "Computational Geometry Algorithms Library: Examples Version 4.14"
+  desc "Computational Geometry Algorithms Library: Examples v.4.14"
   homepage "https://www.cgal.org/"
   url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14/CGAL-4.14.tar.xz"
   sha256 "59464b1eaee892f2223ba570a7642892c999e29524ab102a6efd7c29c94a29f7"
@@ -11,17 +11,17 @@ class CgalExamplesAT414 < Formula
   depends_on "eigen"
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "mpfi"
   depends_on "qt"
   depends_on "tbb"
-  depends_on "zlib"
+  depends_on "metis"
   depends_on "suite-sparse"
   depends_on "open-mesh"
-  depends_on "mpfi"
-  depends_on "metis"
-  depends_on "vtk"
   depends_on "opencv@2"
+  depends_on "vtk"
   depends_on "danston/cgal/esbtl"
   depends_on "danston/cgal/lastools"
+  depends_on "zlib"
 
   def install
     args = std_cmake_args + %W[
@@ -35,7 +35,7 @@ class CgalExamplesAT414 < Formula
       -DOpenCV_DIR=/usr/local/opt/opencv@2/share/OpenCV
     ]
 
-    FileUtils.cp_r "examples/.", "#{prefix}/"
+    cp_r "examples/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
     system "ctest", "-E", "execution___of__"
@@ -51,7 +51,7 @@ class CgalExamplesAT414 < Formula
 
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
               puts "examples/#{dirname}/#{filename}"
-              FileUtils.cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+              cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
           end
         }
