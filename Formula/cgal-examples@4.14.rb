@@ -42,7 +42,7 @@ class CgalExamplesAT414 < Formula
 
     puts "\nInstalling examples for CGAL 4.14..."
     (Dir.entries("examples/") - [".", ".."]).each do |dirname|
-      if File.directory?("examples/#{dirname}/")
+      next unless File.directory?("examples/#{dirname}/")
         (Dir.entries("examples/#{dirname}/") - [".", ".."]).each do |filename|
           if File.file?("examples/#{dirname}/#{filename}")
             extension = File.extname("examples/#{dirname}/#{filename}")
