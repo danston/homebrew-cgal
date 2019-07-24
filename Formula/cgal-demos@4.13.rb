@@ -15,8 +15,8 @@ class CgalDemosAT413 < Formula
   depends_on "mpfr"
   depends_on "opencv@2"
   depends_on "qt"
-  depends_on "tbb"
   depends_on "cimg"
+  depends_on "tbb"
   depends_on "vtk"
   depends_on "zlib"
 
