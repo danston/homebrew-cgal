@@ -41,20 +41,20 @@ class CgalDemosAT413 < Formula
     (Dir.entries("demo/") - [".", ".."]).each do |dirname|
       next unless File.directory?("demo/#{dirname}/")
 
-        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each do |filename|
-          next unless File.file?("demo/#{dirname}/#{filename}")
+      (Dir.entries("demo/#{dirname}/") - [".", ".."]).each do |filename|
+        next unless File.file?("demo/#{dirname}/#{filename}")
 
-            extension = File.extname("demo/#{dirname}/#{filename}")
-            if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
-              puts "demo/#{dirname}/#{filename}"
-              cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
-            end
-
-            if extension == ".dylib"
-              puts "demo/#{dirname}/#{filename}"
-              cp "demo/#{dirname}/#{filename}", "#{lib}"
-            end
+        extension = File.extname("demo/#{dirname}/#{filename}")
+        if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
+          puts "demo/#{dirname}/#{filename}"
+          cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
         end
+
+        if extension == ".dylib"
+          puts "demo/#{dirname}/#{filename}"
+          cp "demo/#{dirname}/#{filename}", "#{lib}"
+        end
+      end
     end
   end
 
