@@ -52,7 +52,6 @@ class CgalExamplesAT414 < Formula
             end
           end
         end
-      end
     end
   end
 
