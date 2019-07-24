@@ -8,17 +8,17 @@ class CgalDemosAT413 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
+  depends_on "danston/cgal/lastools"
   depends_on "eigen"
   depends_on "gmp"
+  depends_on "metis"
   depends_on "mpfr"
+  depends_on "opencv@2"
   depends_on "qt"
   depends_on "tbb"
-  depends_on "metis"
-  depends_on "zlib"
   depends_on "vtk"
   depends_on "cimg"
-  depends_on "opencv@2"
-  depends_on "danston/cgal/lastools"
+  depends_on "zlib"
 
   def install
     args = std_cmake_args + %W[
