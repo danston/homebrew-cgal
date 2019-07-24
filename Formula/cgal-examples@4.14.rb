@@ -41,10 +41,10 @@ class CgalExamplesAT414 < Formula
     system "ctest", "-E", "execution___of__"
 
     puts "\nInstalling examples for CGAL 4.14..."
-    (Dir.entries("examples/") - [".", ".."]).each{|dirname| 
-      
+    (Dir.entries("examples/") - [".", ".."]).each { |dirname| 
+
       if File.directory?("examples/#{dirname}/") then
-        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each{|filename| 
+        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each { |filename| 
 
           if File.file?("examples/#{dirname}/#{filename}") then
             extension = File.extname("examples/#{dirname}/#{filename}")
