@@ -55,9 +55,7 @@ class CgalDemosAT413 < Formula
               puts "demo/#{dirname}/#{filename}"
               cp "demo/#{dirname}/#{filename}", "#{lib}"
             end
-          end
         end
-      end
     end
   end
 
