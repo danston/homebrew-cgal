@@ -9,9 +9,9 @@ class CgalExamplesAT414 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
   depends_on "eigen"
-  depends_on "gmp"
   depends_on "danston/cgal/esbtl"
   depends_on "danston/cgal/lastools" 
+  depends_on "gmp"
   depends_on "metis"
   depends_on "mpfi"
   depends_on "mpfr"
