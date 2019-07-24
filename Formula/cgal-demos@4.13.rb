@@ -1,5 +1,5 @@
 class CgalDemosAT413 < Formula
-  desc "Computational Geometry Algorithms Library: Demos Version 4.13"
+  desc "Computational Geometry Algorithms Library: Demos v.4.13"
   homepage "https://www.cgal.org/"
   url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.13/CGAL-4.13.tar.xz"
   sha256 "3e3dd7a64febda58be54c3cbeba329ab6a73b72d4d7647ba4931ecd1fad0e3bc"
@@ -36,14 +36,14 @@ class CgalDemosAT413 < Formula
     system "cmake", ".", *args
     system "make", "install"
     system "ctest", "-E", "execution___of__"
-    
-    puts "\nInstalling demos for CGAL 4.13..."
-    (Dir.entries("demo/") - [".", ".."]).each{|dirname| 
-      
-      if File.directory?("demo/#{dirname}/") then
-        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each{|filename| 
 
-          if File.file?("demo/#{dirname}/#{filename}") then
+    puts "\nInstalling demos for CGAL 4.13..."
+    (Dir.entries("demo/") - [".", ".."]).each do |dirname|
+      
+      next unless File.directory?("demo/#{dirname}/")
+        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each do |filename|
+
+          next unless File.file?("demo/#{dirname}/#{filename}")
             extension = File.extname("demo/#{dirname}/#{filename}")
 
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
@@ -56,9 +56,9 @@ class CgalDemosAT413 < Formula
               cp "demo/#{dirname}/#{filename}", "#{lib}"
             end
           end
-        }
+        end
       end
-    }
+    end
   end
 
   test do
