@@ -43,7 +43,7 @@ class CgalExamplesAT414 < Formula
     puts "\nInstalling examples for CGAL 4.14..."
     (Dir.entries("examples/") - [".", ".."]).each do |dirname|
       if File.directory?("examples/#{dirname}/")
-        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each { |filename|
+        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each do |filename|
           if File.file?("examples/#{dirname}/#{filename}")
             extension = File.extname("examples/#{dirname}/#{filename}")
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
@@ -51,7 +51,7 @@ class CgalExamplesAT414 < Formula
               cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
           end
-        }
+        end
       end
     end
   end
