@@ -41,7 +41,7 @@ class CgalExamplesAT414 < Formula
     system "ctest", "-E", "execution___of__"
 
     puts "\nInstalling examples for CGAL 4.14..."
-    (Dir.entries("examples/") - [".", ".."]).each { |dirname|
+    (Dir.entries("examples/") - [".", ".."]).each do |dirname|
       if File.directory?("examples/#{dirname}/")
         (Dir.entries("examples/#{dirname}/") - [".", ".."]).each { |filename|
           if File.file?("examples/#{dirname}/#{filename}")
@@ -53,7 +53,7 @@ class CgalExamplesAT414 < Formula
           end
         }
       end
-    }
+    end
   end
 
   test do
