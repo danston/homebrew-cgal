@@ -41,14 +41,11 @@ class CgalExamplesAT414 < Formula
     system "ctest", "-E", "execution___of__"
 
     puts "\nInstalling examples for CGAL 4.14..."
-    (Dir.entries("examples/") - [".", ".."]).each { |dirname| 
-
-      if File.directory?("examples/#{dirname}/") then
-        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each { |filename| 
-
-          if File.file?("examples/#{dirname}/#{filename}") then
+    (Dir.entries("examples/") - [".", ".."]).each { |dirname|
+      if File.directory?("examples/#{dirname}/")
+        (Dir.entries("examples/#{dirname}/") - [".", ".."]).each { |filename|
+          if File.file?("examples/#{dirname}/#{filename}")
             extension = File.extname("examples/#{dirname}/#{filename}")
-
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
               puts "examples/#{dirname}/#{filename}"
               cp "examples/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
