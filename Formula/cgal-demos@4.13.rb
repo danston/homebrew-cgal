@@ -16,8 +16,8 @@ class CgalDemosAT413 < Formula
   depends_on "opencv@2"
   depends_on "qt"
   depends_on "tbb"
-  depends_on "vtk"
   depends_on "cimg"
+  depends_on "vtk"
   depends_on "zlib"
 
   def install
@@ -32,7 +32,7 @@ class CgalDemosAT413 < Formula
       -DOpenCV_DIR=/usr/local/opt/opencv@2/share/OpenCV
     ]
 
-    FileUtils.cp_r "demo/.", "#{prefix}/"
+    cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
     system "ctest", "-E", "execution___of__"
@@ -48,12 +48,12 @@ class CgalDemosAT413 < Formula
 
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
               puts "demo/#{dirname}/#{filename}"
-              FileUtils.cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+              cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
 
             if extension == ".dylib"
               puts "demo/#{dirname}/#{filename}"
-              FileUtils.cp "demo/#{dirname}/#{filename}", "#{lib}"
+              cp "demo/#{dirname}/#{filename}", "#{lib}"
             end
           end
         }
