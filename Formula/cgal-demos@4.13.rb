@@ -35,7 +35,7 @@ class CgalDemosAT413 < Formula
     cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
-    system "ctest", "--timeout", "30000", "-E", "execution___of__"
+    system "ctest", "-L", "AABB_tree", "--timeout", "30000", "-E", "execution___of__"
 
     puts "\nInstalling demos for CGAL 4.13..."
     (Dir.entries("demo/") - [".", ".."]).each do |dirname|
