@@ -40,20 +40,20 @@ class CgalDemosAT413 < Formula
     puts "\nInstalling demos for CGAL 4.13..."
     (Dir.entries("demo/") - [".", ".."]).each{|dirname| 
       
-      if File.directory?("demo/#{dirname}/") then
+      if File.directory?("demo/#{dirname}/")
         (Dir.entries("demo/#{dirname}/") - [".", ".."]).each{|filename| 
 
-          if File.file?("demo/#{dirname}/#{filename}") then
+          if File.file?("demo/#{dirname}/#{filename}")
             extension = File.extname("demo/#{dirname}/#{filename}")
 
             if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
               puts "demo/#{dirname}/#{filename}"
-              FileUtils.cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+              cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
             end
 
             if extension == ".dylib"
               puts "demo/#{dirname}/#{filename}"
-              FileUtils.cp "demo/#{dirname}/#{filename}", "#{lib}"
+              cp "demo/#{dirname}/#{filename}", "#{lib}"
             end
           end
         }
