@@ -38,7 +38,7 @@ class CgalExamplesAT413 < Formula
     cp_r "examples/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
-    system "ctest", "-E", "execution___of__"
+    system "ctest", "--timeout", "60000", "-E", "execution___of__"
 
     puts "\nInstalling examples for CGAL 4.13..."
     (Dir.entries("examples/") - [".", ".."]).each do |dirname|

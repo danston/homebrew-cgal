@@ -35,7 +35,7 @@ class CgalDemosAT414 < Formula
     cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
-    system "ctest", "-E", "execution___of__"
+    system "ctest", "--timeout", "30000", "-E", "execution___of__"
 
     puts "\nInstalling demos for CGAL 4.14..."
     (Dir.entries("demo/") - [".", ".."]).each do |dirname|
@@ -45,6 +45,7 @@ class CgalDemosAT414 < Formula
         next unless File.file?("demo/#{dirname}/#{filename}")
 
         extension = File.extname("demo/#{dirname}/#{filename}")
+
         if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
           puts "demo/#{dirname}/#{filename}"
           cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
@@ -52,7 +53,7 @@ class CgalDemosAT414 < Formula
 
         if extension == ".dylib"
           puts "demo/#{dirname}/#{filename}"
-          cp "demo/#{dirname}/#{filename}", @lib
+          cp "demo/#{dirname}/#{filename}", "#{lib}/"
         end
       end
     end
