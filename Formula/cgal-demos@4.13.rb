@@ -49,7 +49,7 @@ class CgalDemosAT413 < Formula
           #   cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
           # end
 
-          if extension == ""
+          if filename == "Makefile"
             puts "debug"
             puts "demo/#{dirname}/#{filename}"
             lib.cp "demo/#{dirname}/#{filename}"
