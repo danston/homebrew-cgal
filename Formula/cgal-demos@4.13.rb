@@ -44,6 +44,7 @@ class CgalDemosAT413 < Formula
       (Dir.entries("demo/#{dirname}/") - [".", ".."]).each do |filename|
         next unless File.file?("demo/#{dirname}/#{filename}") do
           extension = File.extname("demo/#{dirname}/#{filename}")
+          puts extension.to_s
           # if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
           #   puts "demo/#{dirname}/#{filename}"
           #   cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
