@@ -42,17 +42,18 @@ class CgalDemosAT413 < Formula
       next unless File.directory?("demo/#{dirname}/")
 
       (Dir.entries("demo/#{dirname}/") - [".", ".."]).each do |filename|
-        next unless File.file?("demo/#{dirname}/#{filename}")
+        next unless File.file?("demo/#{dirname}/#{filename}") do
 
-        extension = File.extname("demo/#{dirname}/#{filename}")
-        if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
-          puts "demo/#{dirname}/#{filename}"
-          cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
-        end
+          extension = File.extname("demo/#{dirname}/#{filename}")
+          if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
+            puts "demo/#{dirname}/#{filename}"
+            cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+          end
 
-        if extension == ".dylib"
-          puts "demo/#{dirname}/#{filename}"
-          lib.cp "demo/#{dirname}/#{filename}"
+          if extension == ".dylib"
+            puts "demo/#{dirname}/#{filename}"
+            lib.cp "demo/#{dirname}/#{filename}"
+          end
         end
       end
     end
