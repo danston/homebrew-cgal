@@ -38,10 +38,10 @@ class CgalDemosAT413 < Formula
     system "ctest", "-L", "AABB_tree", "--timeout", "30000", "-E", "execution___of__"
 
     puts "\nInstalling demos for CGAL 4.13..."
-    (Dir.entries("demo/") - [".", ".."]).each{|dirname| 
-      
+    (Dir.entries("demo/") - [".", ".."]).each { |dirname| 
+
       if File.directory?("demo/#{dirname}/")
-        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each{|filename| 
+        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each { |filename|
 
           if File.file?("demo/#{dirname}/#{filename}")
             extension = File.extname("demo/#{dirname}/#{filename}")
