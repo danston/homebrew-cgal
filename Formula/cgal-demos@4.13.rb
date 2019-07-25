@@ -35,7 +35,7 @@ class CgalDemosAT413 < Formula
     cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
-    system "ctest", "--timeout", "30000", "-E", "execution___of__"
+    system "ctest", "-L", "Polyhedron", "--timeout", "30000", "-E", "execution___of__"
 
     puts "\nInstalling demos for CGAL 4.13..."
     (Dir.entries("demo/") - [".", ".."]).each do |dirname|
@@ -51,7 +51,7 @@ class CgalDemosAT413 < Formula
 
             if extension == ".dylib"
               puts "demo/#{dirname}/#{filename}"
-              cp "demo/#{dirname}/#{filename}", "#{lib}"
+              cp "demo/#{dirname}/#{filename}", "#{lib}/"
             end
           end
         end
