@@ -35,29 +35,30 @@ class CgalDemosAT413 < Formula
     cp_r "demo/.", "#{prefix}/"
     system "cmake", ".", *args
     system "make", "install"
-    system "ctest", "-L", "AABB_tree", "--timeout", "30000", "-E", "execution___of__"
+    system "ctest", "--timeout", "30000", "-E", "execution___of__"
 
     puts "\nInstalling demos for CGAL 4.13..."
-    (Dir.entries("demo/") - [".", ".."]).each do |dirname|
-      next unless File.directory?("demo/#{dirname}/")
+    (Dir.entries("demo/") - [".", ".."]).each{|dirname| 
+      
+      if File.directory?("demo/#{dirname}/") then
+        (Dir.entries("demo/#{dirname}/") - [".", ".."]).each{|filename| 
 
-      (Dir.entries("demo/#{dirname}/") - [".", ".."]).each do |filename|
-        next unless File.file?("demo/#{dirname}/#{filename}") do
-          extension = File.extname("demo/#{dirname}/#{filename}")
-          puts extension.to_s
-          # if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
-          #   puts "demo/#{dirname}/#{filename}"
-          #   cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
-          # end
+          if File.file?("demo/#{dirname}/#{filename}") then
+            extension = File.extname("demo/#{dirname}/#{filename}")
 
-          if filename == "Makefile"
-            puts "debug"
-            puts "demo/#{dirname}/#{filename}"
-            lib.cp "demo/#{dirname}/#{filename}"
+            if extension == "" && filename != "Makefile" && filename != "skip_vcproj_auto_generation"
+              puts "demo/#{dirname}/#{filename}"
+              FileUtils.cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+            end
+
+            if extension == ".dylib"
+              puts "demo/#{dirname}/#{filename}"
+              FileUtils.cp "demo/#{dirname}/#{filename}", "#{lib}"
+            end
           end
-        end
+        }
       end
-    end
+    }
   end
 
   test do
