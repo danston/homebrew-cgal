@@ -52,7 +52,7 @@ class CgalDemosAT413 < Formula
 
         if extension == ".dylib"
           puts "demo/#{dirname}/#{filename}"
-          cp "demo/#{dirname}/#{filename}", "#{prefix}/lib"
+          cp "demo/#{dirname}/#{filename}", "#{lib}"
         end
       end
     end
