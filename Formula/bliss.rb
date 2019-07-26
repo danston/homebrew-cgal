@@ -22,7 +22,7 @@ class Bliss < Formula
         bin.install "./#{filename}"
       end
 
-      if extension == ".hh" || extension == ".cc" || extension == ".h"
+      if [".hh", ".cc", ".h"].include?(extension)
         include.install "./#{filename}"
       end
 
