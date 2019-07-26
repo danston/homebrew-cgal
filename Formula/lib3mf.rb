@@ -14,7 +14,7 @@ class Lib3mf < Formula
       -DLIB3MF_TESTS=OFF
     ]
 
-    system "cmake", *args
+    system "cmake", ".", *args
     system "make", "install"
   end
 
