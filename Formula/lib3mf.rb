@@ -12,7 +12,7 @@ class Lib3mf < Formula
       -DCMAKE_BUILD_TYPE=Release
     ]
 
-    system "cmake", ".", *args
+    system "cmake", *args
     system "make", "install"
   end
 
