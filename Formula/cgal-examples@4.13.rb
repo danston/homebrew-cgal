@@ -33,8 +33,6 @@ class CgalExamplesAT413 < Formula
       -DBUILD_TESTING=ON
       -DQt5_DIR=#{HOMEBREW_PREFIX}/opt/qt/lib/cmake/Qt5
       -DOpenCV_DIR=#{HOMEBREW_PREFIX}/opt/opencv@2/share/OpenCV
-      -DOPENMESH_INCLUDE_DIR=#{HOMEBREW_PREFIX}/include
-      -DOPENMESH_LIBRARY_RELEASE=#{HOMEBREW_PREFIX}/lib/libOpenMeshCore.dylib
     ]
 
     cp_r "examples/.", "#{prefix}/"

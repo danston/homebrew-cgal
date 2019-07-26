@@ -34,8 +34,8 @@ class CgalDemosAT413 < Formula
       -DWITH_Eigen3=ON
       -DWITH_demos=ON
       -DBUILD_TESTING=ON
-      -DQt5_DIR=/usr/local/opt/qt/lib/cmake/Qt5
-      -DOpenCV_DIR=/usr/local/opt/opencv@2/share/OpenCV
+      -DQt5_DIR=#{HOMEBREW_PREFIX}/opt/qt/lib/cmake/Qt5
+      -DOpenCV_DIR=#{HOMEBREW_PREFIX}/opt/opencv@2/share/OpenCV
     ]
 
     cp_r "demo/.", "#{prefix}/"
