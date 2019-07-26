@@ -15,7 +15,6 @@ class CgalExamplesAT413 < Formula
   depends_on "metis"
   depends_on "mpfi"
   depends_on "mpfr"
-  depends_on "open-mesh"
   depends_on "opencv@2"
   depends_on "qt"
   depends_on "suite-sparse"
