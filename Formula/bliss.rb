@@ -22,14 +22,18 @@ class Bliss < Formula
         bin.install "./#{filename}"
       end
 
-      if extension == ".hh" || extension == ".cc" || extension == ".o" || extension == ".h"
+      if extension == ".hh" || extension == ".cc" || extension == ".h"
+        include.install "./#{filename}"
+      end
+
+      if extension == ".o"
         include.install "./#{filename}"
       end
 
       if extension == ".a"
         lib.install "./#{filename}"
       end
-    end  
+    end
   end
 
   test do
