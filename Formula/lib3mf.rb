@@ -5,7 +5,7 @@ class Lib3mf < Formula
   version "1.8.1"
   sha256 "55700bf3b6f8890eb2e8b9e379da954c335737271af27a9a194005b2042a83d2"
 
-  depends_on "cmake" => [:build, :test]
+  depends_on "cmake" => :build
   depends_on "ossp-uuid"
 
   def install
