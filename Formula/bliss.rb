@@ -18,7 +18,7 @@ class Bliss < Formula
         bin.install "./#{filename}"
       end
 
-      if extension == "" || && filename != "Makefile" && filename != "Doxyfile"
+      if extension == "" && filename != "Makefile" && filename != "Doxyfile"
         bin.install "./#{filename}"
       end
 
