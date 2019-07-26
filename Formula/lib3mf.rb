@@ -8,7 +8,7 @@ class Lib3mf < Formula
   depends_on "ossp-uuid"
 
   def install
-    args = std_cmake_args + %W[
+    args = std_cmake_args + %w[
       -DCMAKE_BUILD_TYPE=Release
     ]
 
