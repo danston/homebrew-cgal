@@ -3,7 +3,7 @@ class Librs < Formula
   homepage "http://vegas.loria.fr/rs/"
   url "https://github.com/danston/cgal-brew/raw/master/librs.tar.gz"
   version "3.1.0"
-  sha256 "ddbaef00f6a54805d8decfc7c4532bae6df4ac52d014d386703c92bcfee554e7"
+  sha256 "fcf56baad24d3ab78e630b8d9571a3b2665b5564f75cd568e04442e76eb8a2d4"
 
   keg_only :versioned_formula
 
