@@ -22,8 +22,9 @@ class Bliss < Formula
         bin.install "./#{filename}"
       end
 
+      mkdir "#{include}/bliss/"
       if [".hh", ".cc", ".h"].include?(extension)
-        include.install "./#{filename}"
+        cp "#{include}/bliss/", "./#{filename}"
       end
 
       if extension == ".o"
