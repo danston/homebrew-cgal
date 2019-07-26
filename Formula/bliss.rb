@@ -28,7 +28,7 @@ class Bliss < Formula
       end
 
       if extension == ".o"
-        include.install "./#{filename}"
+        cp "./#{filename}", "#{include}/bliss/"
       end
 
       if extension == ".a"
