@@ -31,10 +31,10 @@ class CgalExamplesAT413 < Formula
       -DWITH_Eigen3=ON
       -DWITH_examples=ON
       -DBUILD_TESTING=ON
-      -DQt5_DIR=/usr/local/opt/qt/lib/cmake/Qt5
-      -DOpenCV_DIR=/usr/local/opt/opencv@2/share/OpenCV
-      -DOPENMESH_INCLUDE_DIR=/usr/local/include
-      -DOPENMESH_LIBRARY_RELEASE=/usr/local/lib/libOpenMeshCore.dylib
+      -DQt5_DIR=#{HOMEBREW_PREFIX}/opt/qt/lib/cmake/Qt5
+      -DOpenCV_DIR=#{HOMEBREW_PREFIX}/opt/opencv@2/share/OpenCV
+      -DOPENMESH_INCLUDE_DIR=#{HOMEBREW_PREFIX}/include
+      -DOPENMESH_LIBRARY_RELEASE=#{HOMEBREW_PREFIX}/lib/libOpenMeshCore.dylib
     ]
 
     cp_r "examples/.", "#{prefix}/"
