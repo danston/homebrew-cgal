@@ -8,13 +8,17 @@ class Bliss < Formula
   def install
     system "make"
 
-    puts "\nInstalling bliss..."
+    puts "Installing bliss..."
     (Dir.entries("./") - [".", ".."]).each do |filename|
       next unless File.file?("./#{filename}")
 
       extension = File.extname("./#{filename}")
 
-      if extension == "" && filename != "Makefile" && filename != "Doxyfile"
+      if filename == "COPYING.LESSER"
+        bin.install "./#{filename}"
+      end
+
+      if extension == "" || && filename != "Makefile" && filename != "Doxyfile"
         bin.install "./#{filename}"
       end
 

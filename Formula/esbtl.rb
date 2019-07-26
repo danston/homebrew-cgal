@@ -7,6 +7,7 @@ class Esbtl < Formula
 
   def install
     include.install Dir["include/*"]
+    prefix.install "EXCEPTION.txt"
   end
 
   test do
