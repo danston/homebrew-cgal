@@ -24,7 +24,7 @@ class Bliss < Formula
 
       mkdir "#{include}/bliss/"
       if [".hh", ".cc", ".h"].include?(extension)
-        cp "#{include}/bliss/", "./#{filename}"
+        cp "./#{filename}", "#{include}/bliss/"
       end
 
       if extension == ".o"
