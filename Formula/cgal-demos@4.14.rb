@@ -61,6 +61,42 @@ class CgalDemosAT414 < Formula
           puts "demo/#{dirname}/#{filename}"
           cp "demo/#{dirname}/#{filename}", "#{lib}/"
         end
+
+        if [".cpp", ".h"].include?(extension)
+          puts "demo/#{dirname}/#{filename}"
+          cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+        end
+      end
+
+      next unless dirname == "Polyhedron"
+
+      (Dir.entries("demo/#{dirname}/Plugins/") - [".", ".."]).each do |plugin|
+        (Dir.entries("demo/#{dirname}/Plugins/#{plugin}/") - [".", ".."]).each do |filename|
+          next unless File.file?("demo/#{dirname}/Plugins/#{plugin}/#{filename}")
+
+          extension = File.extname("demo/#{dirname}/Plugins/#{plugin}/#{filename}")
+
+          if [".so", ".cpp", ".h"].include?(extension)
+            puts "demo/#{dirname}/Plugins/#{plugin}/#{filename}"
+            cp "demo/#{dirname}/Plugins/#{plugin}/#{filename}", "#{prefix}/#{dirname}/Plugins/#{plugin}/"
+          end
+
+          if extension == ".dylib"
+            puts "demo/#{dirname}/Plugins/#{plugin}/#{filename}"
+            cp "demo/#{dirname}/Plugins/#{plugin}/#{filename}", "#{lib}/"
+          end
+        end
+      end
+
+      (Dir.entries("demo/#{dirname}/implicit_functions/") - [".", ".."]).each do |filename|
+        next unless File.file?("demo/#{dirname}/implicit_functions/#{filename}")
+
+        extension = File.extname("demo/#{dirname}/implicit_functions/#{filename}")
+
+        if extension == ".so"
+          puts "demo/#{dirname}/implicit_functions/#{filename}"
+          cp "demo/#{dirname}/implicit_functions/#{filename}", "#{prefix}/#{dirname}/implicit_functions/"
+        end
       end
     end
   end
