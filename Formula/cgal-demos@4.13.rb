@@ -80,6 +80,11 @@ class CgalDemosAT413 < Formula
             puts "demo/#{dirname}/Plugins/#{plugin}/#{filename}"
             cp "demo/#{dirname}/Plugins/#{plugin}/#{filename}", "#{prefix}/#{dirname}/Plugins/#{plugin}/"
           end
+
+          if extension == ".dylib"
+            puts "demo/#{dirname}/Plugins/#{plugin}/#{filename}"
+            cp "demo/#{dirname}/Plugins/#{plugin}/#{filename}", "#{lib}/"
+          end
         end
       end
 
