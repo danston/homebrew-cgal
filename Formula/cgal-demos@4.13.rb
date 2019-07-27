@@ -61,6 +61,11 @@ class CgalDemosAT413 < Formula
           puts "demo/#{dirname}/#{filename}"
           cp "demo/#{dirname}/#{filename}", "#{lib}/"
         end
+
+        if [".cpp", ".h"].include?(extension)
+          puts "demo/#{dirname}/#{filename}"
+          cp "demo/#{dirname}/#{filename}", "#{prefix}/#{dirname}/"
+        end
       end
 
       next unless dirname == "Polyhedron"
@@ -71,7 +76,7 @@ class CgalDemosAT413 < Formula
 
           extension = File.extname("demo/#{dirname}/Plugins/#{plugin}/#{filename}")
 
-          if extension == ".so"
+          if [".so", ".cpp", ".h"].include?(extension)
             puts "demo/#{dirname}/Plugins/#{plugin}/#{filename}"
             cp "demo/#{dirname}/Plugins/#{plugin}/#{filename}", "#{prefix}/#{dirname}/Plugins/#{plugin}/"
           end
