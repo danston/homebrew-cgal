@@ -64,6 +64,7 @@ class CgalDemosAT413 < Formula
       end
 
       next unless dirname == "Polyhedron"
+
       (Dir.entries("demo/#{dirname}/Plugins/") - [".", ".."]).each do |plugin|
         (Dir.entries("demo/#{dirname}/Plugins/#{plugin}/") - [".", ".."]).each do |filename|
           next unless File.file?("demo/#{dirname}/Plugins/#{plugin}/#{filename}")
