@@ -62,6 +62,32 @@ class CgalDemosAT413 < Formula
           cp "demo/#{dirname}/#{filename}", "#{lib}/"
         end
       end
+
+      if dirname == "Polyhedron"
+        (Dir.entries("demo/#{dirname}/Plugins/") - [".", ".."]).each do |plugin|
+          (Dir.entries("demo/#{dirname}/Plugins/#{plugin}/") - [".", ".."]).each do |filename|
+            next unless File.file?("demo/#{dirname}/Plugins/#{plugin}/#{filename}")
+
+            extension = File.extname("demo/#{dirname}/Plugins/#{plugin}/#{filename}")
+
+            if extension == ".so"
+              puts "demo/#{dirname}/Plugins/#{plugin}/#{filename}"
+              cp "demo/#{dirname}/Plugins/#{plugin}/#{filename}", "#{prefix}/#{dirname}/Plugins/#{plugin}/"
+            end
+          end
+        end
+
+        (Dir.entries("demo/#{dirname}/implicit_functions/") - [".", ".."]).each do |filename|
+          next unless File.file?("demo/#{dirname}/implicit_functions/#{filename}")
+
+          extension = File.extname("demo/#{dirname}/implicit_functions/#{filename}")
+
+          if extension == ".so"
+            puts "demo/#{dirname}/implicit_functions/#{filename}"
+            cp "demo/#{dirname}/implicit_functions/#{filename}", "#{prefix}/#{dirname}/implicit_functions/"
+          end
+        end
+      end
     end
   end
 
