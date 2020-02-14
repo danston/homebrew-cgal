@@ -6,9 +6,6 @@ class CgalAT501 < Formula
 
   bottle do
     cellar :any
-    sha256 "91b1ca6db31e4132b36c2bf2ef6b1ff812daa78d750fe83664f63b1d8713ce77" => :catalina
-    sha256 "91b1ca6db31e4132b36c2bf2ef6b1ff812daa78d750fe83664f63b1d8713ce77" => :mojave
-    sha256 "91b1ca6db31e4132b36c2bf2ef6b1ff812daa78d750fe83664f63b1d8713ce77" => :high_sierra
   end
 
   keg_only :versioned_formula
