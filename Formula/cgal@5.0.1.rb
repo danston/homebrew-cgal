@@ -20,6 +20,7 @@ class CgalAT501 < Formula
 
   def install
     args = std_cmake_args + %W[
+      -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_CXX_FLAGS='-std=c++14'
       -DWITH_Eigen3=ON
       -DWITH_LAPACK=ON
