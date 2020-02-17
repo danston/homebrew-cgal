@@ -5,9 +5,7 @@ class CgalDemosAT501 < Formula
   sha256 "66021111fe536268d044e5e01bd26e691d7b493c217a1ca4d9427284dd4b2a02"
 
   bottle do
-    root_url "https://dl.bintray.com/danston/bottles-cgal"
     cellar :any
-    sha256 "bcbaa58f657566f08d5b34910f43505a8a2dcba5286f6003330225affef9c215" => :mojave
   end
 
   keg_only :versioned_formula
@@ -30,6 +28,8 @@ class CgalDemosAT501 < Formula
     args = std_cmake_args + %W[
       -DCMAKE_CXX_FLAGS='-std=c++14'
       -DCMAKE_CXX_FLAGS='-DCGAL_DO_NOT_USE_BOOST_MP'
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
+      -DCMAKE_INSTALL_NAME_DIR=#{lib}
       -DWITH_Eigen3=ON
       -DWITH_demos=ON
       -DBUILD_TESTING=ON
