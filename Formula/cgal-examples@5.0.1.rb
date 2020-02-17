@@ -5,7 +5,9 @@ class CgalExamplesAT501 < Formula
   sha256 "66021111fe536268d044e5e01bd26e691d7b493c217a1ca4d9427284dd4b2a02"
 
   bottle do
-    cellar :any_skip_relocation
+    root_url "https://dl.bintray.com/danston/bottles-cgal"
+    cellar :any
+    sha256 "247f24ce0070871266cd3016abacad2dcbdd1b7c667aa63822c300a544a43392" => :mojave
   end
 
   keg_only :versioned_formula
