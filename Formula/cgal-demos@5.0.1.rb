@@ -26,7 +26,6 @@ class CgalDemosAT501 < Formula
 
   def install
     args = std_cmake_args + %W[
-      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
       -DCMAKE_INSTALL_NAME_DIR=#{lib}
       -DCMAKE_CXX_FLAGS='-std=c++14'
       -DCMAKE_CXX_FLAGS='-DCGAL_DO_NOT_USE_BOOST_MP'
