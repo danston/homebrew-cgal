@@ -1,14 +1,11 @@
-class CgalDemosAT501 < Formula
-  desc "Computational Geometry Algorithms Library: Demos v.5.0.1"
+class CgalDemosAT502 < Formula
+  desc "Computational Geometry Algorithms Library: Demos v.5.0.2"
   homepage "https://www.cgal.org/"
-  url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-5.0.1/CGAL-5.0.1.tar.xz"
-  sha256 "66021111fe536268d044e5e01bd26e691d7b493c217a1ca4d9427284dd4b2a02"
+  url "https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-5.0.2/CGAL-5.0.2.tar.xz"
+  sha256 "bb3594ba390735404f0972ece301f369b1ff12646ad25e48056b4d49c976e1fa"
 
   bottle do
-    root_url "https://dl.bintray.com/danston/bottles-cgal"
     cellar :any
-    sha256 "931782cf3e2ff257f39f97fb8a79f57545d0b9638f7a5bd7c6a4e7a8c821e64e" => :catalina
-    sha256 "93ecebe0ca181753e9058fcc2da1e7a55d84c26b8b19eaf5ba91b8f1c9864125" => :mojave
   end
 
   keg_only :versioned_formula
@@ -46,7 +43,7 @@ class CgalDemosAT501 < Formula
     system "make", "install"
     system "ctest", "--timeout", "30000", "-E", "execution___of__"
 
-    puts "\nInstalling demos for CGAL 5.0.1..."
+    puts "\nInstalling demos for CGAL 5.0.2..."
     (Dir.entries("demo/") - [".", ".."]).each do |dirname|
       next unless File.directory?("demo/#{dirname}/")
 
